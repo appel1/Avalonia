@@ -415,6 +415,7 @@ export class InputHelper {
 
         return () => {
             element.removeEventListener("compositionstart", compositionStartHandler);
+            element.removeEventListener("beforeinput", beforeInputHandler);
             element.removeEventListener("compositionupdate", compositionUpdateHandler);
             element.removeEventListener("compositionend", compositionEndHandler);
         };
@@ -464,7 +465,7 @@ export class InputHelper {
         element.addEventListener("pointercancel", pointerCancelHandler);
 
         return () => {
-            element.removeEventListener("pointerover", pointerMoveHandler);
+            element.removeEventListener("pointermove", pointerMoveHandler);
             element.removeEventListener("pointerdown", pointerDownHandler);
             element.removeEventListener("pointerup", pointerUpHandler);
             element.removeEventListener("pointercancel", pointerCancelHandler);
